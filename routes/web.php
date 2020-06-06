@@ -19,6 +19,7 @@ Route::get('/buku/{slug}', 'eccomerce\EccomerceController@show')->name('eccomerc
 Route::get('/produk', 'eccomerce\EccomerceController@product')->name('eccomerce.product');
 Route::get('/produk/cari', 'eccomerce\EccomerceController@search')->name('eccomerce.search');
 Route::get('/kategori/{category}', 'eccomerce\EccomerceController@category')->name('eccomerce.category');
+Route::get('/tentang', 'eccomerce\EccomerceController@about')->name('eccomerce.about');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

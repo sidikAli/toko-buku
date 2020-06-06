@@ -43,4 +43,10 @@ class EccomerceController extends Controller
     	$books = $category->book()->orderBy('judul', 'asc')->paginate(12);
     	return view('eccomerce.product', compact('books', 'categories'));
     }
+
+    public function about()
+    {
+        $categories = Category::all();
+        return view('eccomerce.about', compact('categories'));
+    }
 }

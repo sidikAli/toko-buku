@@ -48,6 +48,10 @@
 						<a href="https://facebook.com/sidikali11" class="flex-c-m trans-04 p-lr-25">
 							<i class="fa fa-facebook"></i>
 						</a>
+
+						<a href="https://twitter.com/alisidik221" class="flex-c-m trans-04 p-lr-25">
+							<i class="fa fa-twitter"></i>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -75,7 +79,7 @@
 								</ul>
 							</li>
 							<li class="{{ request()->is('tentang') ? "active-menu" : "" }}">
-								<a href="about.html">Tentang</a>
+								<a href="{{ route('eccomerce.about') }}">Tentang</a>
 							</li>
 
 						</ul>
