@@ -7865,7 +7865,6 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'ali', 'sidik221b@gmail.com', NULL, '$2y$10$8g13RvyZnA6C/m48O3aEmOoMXLnegAnPFeX..M4VhJRr2IC5mILqi', 'admin', NULL, '2020-05-21 02:20:46', '2020-05-21 02:20:46'),
 (3, 'user1', 'user1@gmail.com', NULL, '$2y$10$xrTfwdFSmZ9bY6D1NcgW/.eZgC6/LEzxTn6pcauixC.9YlXkBdxy.', 'user', NULL, '2020-05-24 19:59:21', '2020-05-24 19:59:21'),
 (4, 'admin', 'admin@bacalah.com', NULL, '$2y$10$Yf8k7ZmS10xVW/vNKc9D9.os8fCt7b6jKC/Cd9unp.cTZ5aaH7zNe', 'admin', NULL, NULL, NULL);
 
