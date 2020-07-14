@@ -20,7 +20,7 @@
 									<th class="column-5">Total</th>
 								</tr>
 								
-								@php($subtotal = 0)
+								@php($totals = 0)
 								@foreach($carts as $cart)
 								<tr class="table_row">
 									<td class="column-1">
@@ -45,7 +45,7 @@
 										</div>
 									</td>
 									@php ($total = $cart->book->harga * $cart->qty)
-									@php ($subtotal += $total)
+									@php ($totals += $total)
 									<td class="column-5">@currency($total)</td>
 								</tr>	
 								@endforeach
@@ -69,45 +69,6 @@
 						<h4 class="mtext-109 cl2 p-b-30">
 							Cart Totals
 						</h4>
-
-						<div class="flex-w flex-t bor12 p-b-13">
-							<div class="size-208">
-								<span class="stext-110 cl2">
-									Subtotal:
-								</span>
-							</div>
-
-							<div class="size-209">
-								<span class="mtext-110 cl2">
-									@currency($subtotal)
-								</span>
-							</div>
-						</div>
-						
-						@if($address)
-						<div class="flex-w flex-t bor12 p-t-15 p-b-20">
-							<div class="size-208 w-full-ssm">
-								<span class="stext-110 cl2">
-									Ongkir:
-								</span>
-							</div>
-
-							<div class="size-209 p-r-18 p-r-0-sm w-full-ssm">
-								<p class="stext-111 cl6 p-t-1">
-									{{ $address->subdistrict->name }},
-									{{ $address->subdistrict->city->name }},
-									{{ $address->subdistrict->city->province->name }}.
-									{{ $address->detail }}
-								</p>
-
-								<div class="size-209 p-t-20">
-									<span class="mtext-110 cl2" id="ongkir">
-										@currency($ongkir)
-									</span>
-								</div>
-							</div>
-						</div>
-
 						<div class="flex-w flex-t p-t-20 p-b-33">
 							<div class="size-208">
 								<span class="mtext-101 cl2">
@@ -117,14 +78,15 @@
 
 							<div class="size-209 p-t-1">
 								<span class="mtext-110 cl2">
-									@currency($subtotal+$ongkir)
+									@currency($totals)
 								</span>
 							</div>
 						</div>
 
-						<button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-							Buat Pesanan
-						</button>
+						@if($address)
+						<a href="{{ route('cart.checkout') }}" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+							Checkout
+						</a>
 						@else
 						<div class="p-t-10 text-center">
 							<a href="{{ route('user.address') }}" class="btn btn-success">Atur Alamat</a>

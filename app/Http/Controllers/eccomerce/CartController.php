@@ -22,35 +22,7 @@ class CartController extends Controller
     	$carts   = Cart::where('users_id', $user_id)->get();
         $address = Address::where('user_id', $user_id)->first();
 
-
-        $ongkir = 0;
-        if ($address && $carts->count() > 0) {
-
-            //cek berat barang
-            $berat_total = 0;
-            foreach($carts as $cart){
-                $berat = $cart->book->berat * $cart->qty;
-                $berat_total = $berat_total + $berat;
-            }
-
-
-            //cek onkir
-            $url = 'https://api.rajaongkir.com/starter/cost';
-            $response = Http::withHeaders([
-                'key' => '14cab32f812d5497d997a3dfa775f2c0  '
-            ])->post($url, [
-                //alamat toko (kota)
-                'origin' => StoreAddress::first()->subdistrict->city->id,
-                //alamat tujuan (kecamatan)
-                'destination' => $address->subdistrict->id,
-                'weight' => $berat_total,
-                'courier' => 'jne'
-            ])->json();
-            
-            $ongkir = $response['rajaongkir']['results'][0]['costs'][0]['cost'][0]['value'];
-        }
-
-    	return view('eccomerce.cart', compact('carts', 'categories', 'address', 'ongkir'));
+    	return view('eccomerce.cart', compact('carts', 'categories', 'address'));
     }
 
     public function create(Request $request)
@@ -99,8 +71,58 @@ class CartController extends Controller
         return redirect()->back();
     }
 
-    public function getOngkir()
+    public function checkout()
     {
+        $categories = Category::all();
 
+        $user_id = Auth::user()->id;
+        $carts   = Cart::where('users_id', $user_id)->get();
+        $address = Address::where('user_id', $user_id)->first();
+
+        //cek total harga buku
+        $sub_total = 0;
+        foreach($carts as $cart){
+            $sub_total += $cart->book->harga * $cart->qty;
+        }
+
+        $ongkir = $this->ongkir();
+        $total_harga = $sub_total + $ongkir;
+        return view('eccomerce.checkout', compact('categories', 'carts', 'ongkir', 'total_harga', 'address'));
+    }
+
+    public function ongkir()
+    {
+        $user_id = Auth::user()->id;
+        $carts   = Cart::where('users_id', $user_id)->get();
+        $address = Address::where('user_id', $user_id)->first();
+
+        //cek berat barang
+        $berat_total = 0;
+        foreach($carts as $cart){
+            $berat = $cart->book->berat * $cart->qty;
+            $berat_total += $berat;
+        }
+
+        //cek onkir
+        $url = 'https://api.rajaongkir.com/starter/cost';
+        $response = Http::withHeaders([
+            'key' => '14cab32f812d5497d997a3dfa775f2c0'
+        ])->post($url, [
+            //alamat toko (kota)
+            'origin' => StoreAddress::first()->subdistrict->city->id,
+            //alamat tujuan (kecamatan)
+            'destination' => $address->subdistrict->id,
+            'weight' => $berat_total,
+            'courier' => 'jne'
+        ])->json();
+        
+        $ongkir = $response['rajaongkir']['results'][0]['costs'][0]['cost'][0]['value'];
+        
+        return $ongkir;
+    }
+
+    public function order(Request $request)
+    {
+        dd($request);
     }
 }

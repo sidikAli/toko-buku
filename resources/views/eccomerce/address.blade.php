@@ -14,8 +14,20 @@
 		<div class="container">
 			<div class="row">
 
+				<div class="col-md-3">
+					<div class="card">
+					  <div class="card-header text-white bg-dark ">
+					    Alamat
+					  </div>
+					  <ul class="list-group list-group-flush">
+					    <li class="list-group-item"><a href="{{ route('user.index') }}">Profil</a></li>
+					    <li class="list-group-item"><a href="{{ route('user.address') }}">Alamat</a></li>
+					  </ul>
+					</div>
+				</div>
 
-				<div class="col-12">
+
+				<div class="col-md-9">
 				    <div class="card-header text-white bg-dark text-center">
 				      Alamat
 				    </div>

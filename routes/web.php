@@ -34,10 +34,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'checkRole:admin'] ]
 	Route::patch('/pengaturan/alamat/{id}', 'StoreAddressController@update')->name('store.address.update');
 });
 
-Route::group(['prefix' => 'user', 'middleware' => ['auth', 'checkRole:user'] ], function() {
+Route::group(['middleware' => ['auth', 'checkRole:user'] ], function() {
 	Route::get('/keranjang', 'eccomerce\CartController@index')->name('cart.index');
 	Route::post('/keranjang', 'eccomerce\CartController@create')->name('cart.create');
 	Route::patch('/keranjang', 'eccomerce\CartController@update')->name('cart.update');
+
+	Route::get('/checkout', 'eccomerce\CartController@checkout')->name('cart.checkout');
+	Route::post('/pesan', 'eccomerce\CartController@order')->name('cart.order');
+
+	Route::resource('/user', 'eccomerce\UserController')->except(['create', 'show', 'store', 'destroy']);
 	
 	Route::get('/alamat', 'eccomerce\AddressController@index')->name('user.address');
 	Route::post('/alamat', 'eccomerce\AddressController@store')->name('user.address.store');

@@ -26,6 +26,17 @@
 						<p class="stext-113 cl6 p-b-26">
 							Donec gravida lorem elit, quis condimentum ex semper sit amet. Fusce eget ligula magna. Aliquam aliquam imperdiet sodales. Ut fringilla turpis in vehicula vehicula. Pellentesque congue ac orci ut gravida. Aliquam erat volutpat. Donec iaculis lectus a arcu facilisis, eu sodales lectus sagittis. Etiam pellentesque, magna vel dictum rutrum, neque justo eleifend elit, vel tincidunt erat arcu ut sem. Sed rutrum, turpis ut commodo efficitur, quam velit convallis ipsum, et maximus enim ligula ac ligula. 
 						</p>
+
+						<div class="card">
+						  <div class="card-header">
+						    Quote
+						  </div>
+						  <div class="card-body">
+						    <blockquote class="blockquote mb-0">
+						      <p>Source : <a href="https://github.com/sidikAli/toko-buku">https://github.com/sidikAli/toko-buku</a></p>
+						    </blockquote>
+						  </div>
+						</div>
 					</div>
 				</div>
 			</div>
