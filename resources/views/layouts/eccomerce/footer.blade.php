@@ -4,23 +4,23 @@
 			<div class="">
 				<div class="flex-c-m flex-w p-b-18">
 					<a href="#" class="m-all-1">
-						<img src="{{ secure_asset('eccomerce') }}/images/icons/icon-pay-01.png" alt="ICON-PAY">
+						<img src="{{ asset('') }}/eccomerce/images/icons/icon-pay-01.png" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="{{ secure_asset('eccomerce') }}/images/icons/icon-pay-02.png" alt="ICON-PAY">
+						<img src="{{ asset('') }}/eccomerce/images/icons/icon-pay-02.png" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="{{ secure_asset('eccomerce') }}/images/icons/icon-pay-03.png" alt="ICON-PAY">
+						<img src="{{ asset('') }}/eccomerce/images/icons/icon-pay-03.png" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="{{ secure_asset('eccomerce') }}/images/icons/icon-pay-04.png" alt="ICON-PAY">
+						<img src="{{ asset('') }}/eccomerce/images/icons/icon-pay-04.png" alt="ICON-PAY">
 					</a>
 
 					<a href="#" class="m-all-1">
-						<img src="{{ secure_asset('eccomerce') }}/images/icons/icon-pay-05.png" alt="ICON-PAY">
+						<img src="{{ asset('') }}/eccomerce/images/icons/icon-pay-05.png" alt="ICON-PAY">
 					</a>
 				</div>
 
@@ -43,25 +43,25 @@ Copyright &copy;{{date('Y')}} All rights reserved | This template is made with <
 	</div>
 
 <!--===============================================================================================-->	
-	<script src="{{ secure_asset('eccomerce') }}/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="{{ asset('') }}/eccomerce/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="{{ secure_asset('eccomerce') }}/vendor/animsition/js/animsition.min.js"></script>
+	<script src="{{ asset('') }}/eccomerce/vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
-	<script src="{{ secure_asset('eccomerce') }}/vendor/bootstrap/js/popper.js"></script>
-	<script src="{{ secure_asset('eccomerce') }}/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="{{ asset('') }}/eccomerce/vendor/bootstrap/js/popper.js"></script>
+	<script src="{{ asset('') }}/eccomerce/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script src="{{ secure_asset('eccomerce') }}/vendor/daterangepicker/moment.min.js"></script>
-	<script src="{{ secure_asset('eccomerce') }}/vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="{{ asset('') }}/eccomerce/vendor/daterangepicker/moment.min.js"></script>
+	<script src="{{ asset('') }}/eccomerce/vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
-	<script src="{{ secure_asset('eccomerce') }}/vendor/slick/slick.min.js"></script>
-	<script src="{{ secure_asset('eccomerce') }}/js/slick-custom.js"></script>
+	<script src="{{ asset('') }}/eccomerce/vendor/slick/slick.min.js"></script>
+	<script src="{{ asset('') }}/eccomerce/js/slick-custom.js"></script>
 
 
 <!--===============================================================================================-->
-	<script src="{{ secure_asset('eccomerce') }}/vendor/isotope/isotope.pkgd.min.js"></script>
+	<script src="{{ asset('') }}/eccomerce/vendor/isotope/isotope.pkgd.min.js"></script>
 	
 <!--===============================================================================================-->
-	<script src="{{ secure_asset('eccomerce') }}/js/main.js"></script>
+	<script src="{{ asset('') }}/eccomerce/js/main.js"></script>
 	@yield('js')
 </body>
 </html>
