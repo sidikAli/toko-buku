@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\eccomerce;
 
+use Kavist\RajaOngkir\Facades\RajaOngkir;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
@@ -103,20 +104,17 @@ class CartController extends Controller
             $berat_total += $berat;
         }
 
-        //cek onkir
-        $url = 'https://api.rajaongkir.com/starter/cost';
-        $response = Http::withHeaders([
-            'key' => '14cab32f812d5497d997a3dfa775f2c0'
-        ])->post($url, [
-            //alamat toko (kota)
-            'origin' => StoreAddress::first()->subdistrict->city->id,
-            //alamat tujuan (kecamatan)
-            'destination' => $address->subdistrict->id,
-            'weight' => $berat_total,
-            'courier' => 'jne'
-        ])->json();
-        
-        $ongkir = $response['rajaongkir']['results'][0]['costs'][0]['cost'][0]['value'];
+        $response = RajaOngkir::ongkosKirim([
+                    //kota asal
+                    'origin'        => StoreAddress::first()->subdistrict->city->id,
+                    //kota tujuan
+                    'destination'   => $address->subdistrict->city->id,
+                    'weight'        => $berat_total,    // berat barang dalam gram
+                    'courier'       => 'jne'    // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
+                  ])->get();
+        // var_dump ($response);
+        // die();
+        $ongkir = $response[0]['costs'][0]['cost'][0]['value'];
         
         return $ongkir;
     }
