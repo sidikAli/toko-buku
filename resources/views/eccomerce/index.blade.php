@@ -52,10 +52,10 @@
 	</section>
 
 	<!-- Product -->
-	<section class="bg0 p-t-23 p-b-140">
+	<section class="bg0 p-t-80 p-b-140">
 		<div class="container">
 			<div class="p-b-10">
-				<h3 class="ltext-103 cl5 text-center mb-4 mt-2">
+				<h3 class="ltext-103 cl5 mb-4 mt-2">
 					Buku Terbaru
 				</h3>
 			</div>

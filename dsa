@@ -1,0 +1,117 @@
+[33mcommit 5640e12436723076978ee9dfe1295540972a8fbe[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: sidik <sidik221b@gmail.com>
+Date:   Tue Jul 21 10:41:22 2020 +0700
+
+    Revert "ubah cek ongkir"
+    
+    This reverts commit 825818268b73f5838702ea3afcd93f6c37e98f35.
+
+[33mcommit 73eaad06276d90069c153a30f2383d2aa9fcf2dd[m
+Author: sidik <sidik221b@gmail.com>
+Date:   Tue Jul 21 10:26:42 2020 +0700
+
+    hapus dd
+
+[33mcommit efd377eced3251fb19ab6aaab59239cf91acb4e5[m
+Author: sidik <sidik221b@gmail.com>
+Date:   Tue Jul 21 10:23:19 2020 +0700
+
+    dd carts
+
+[33mcommit 825818268b73f5838702ea3afcd93f6c37e98f35[m[33m ([m[1;31morigin/master[m[33m, [m[1;31mheroku/master[m[33m)[m
+Author: sidik <sidik221b@gmail.com>
+Date:   Mon Jul 20 21:20:05 2020 +0700
+
+    ubah cek ongkir
+
+[33mcommit 5d844784d23a56ade15a341239e8b629831f4a69[m
+Author: sidik <sidik221b@gmail.com>
+Date:   Thu Jul 16 04:08:30 2020 +0700
+
+    ubah asset kembali
+
+[33mcommit 8c72addbcfd34ae05592cb009a8078f484ea777e[m
+Author: sidik <sidik221b@gmail.com>
+Date:   Thu Jul 16 03:43:26 2020 +0700
+
+    ganti asset jadi secure_asset
+
+[33mcommit 34bdc6a254cc729cbf6e793bd82d02c4d00899de[m
+Author: sidik <sidik221b@gmail.com>
+Date:   Wed Jul 15 19:40:15 2020 +0700
+
+    edit database
+
+[33mcommit efeb310488b34f6a6488cce3f7c5ba10c2033675[m
+Merge: 1bdd3a5 b706113
+Author: sidik <sidik221b@gmail.com>
+Date:   Wed Jul 15 19:34:36 2020 +0700
+
+    Merge branch 'asli'
+
+[33mcommit b7061135b646f8f58d59abfffbec4adbebdf085d[m
+Author: sidik <sidik221b@gmail.com>
+Date:   Wed Jul 15 19:34:24 2020 +0700
+
+    ubah fillable category
+
+[33mcommit 1bdd3a5b6e4ed1f25ce4f4f8029669aceaa7b31a[m
+Author: sidik <sidik221b@gmail.com>
+Date:   Wed Jul 15 13:57:08 2020 +0700
+
+    update database lagi
+
+[33mcommit 2bbb6bdd48308680e1b0528e34856547a9265b36[m
+Author: sidik <sidik221b@gmail.com>
+Date:   Wed Jul 15 13:51:33 2020 +0700
+
+    update database
+
+[33mcommit d21fcec7731c4e29440806080752022f74a1a0ce[m
+Author: sidik <sidik221b@gmail.com>
+Date:   Wed Jul 15 13:22:04 2020 +0700
+
+    edit composer.json:
+
+[33mcommit 5676ff9378d6a93dd7b2c8bac3ef68deb02ac132[m
+Merge: 0ac9721 a8b0f02
+Author: sidik <sidik221b@gmail.com>
+Date:   Tue Jul 14 19:31:47 2020 +0700
+
+    Merge branch 'master' of https://github.com/sidikAli/toko-buku
+
+[33mcommit 0ac9721a1a7d720bb6ad11379bbe5e04c80a51a1[m
+Author: sidik <sidik221b@gmail.com>
+Date:   Tue Jul 14 19:29:27 2020 +0700
+
+    tambah menu profil
+
+[33mcommit a8b0f0218419d666f313c202c4632dcbf8310e24[m
+Author: Sidik Ali <53923389+sidikAli@users.noreply.github.com>
+Date:   Tue Jun 9 13:01:22 2020 +0700
+
+    Update toko-buku.sql
+
+[33mcommit 94ed982b5ebfaf8355b3bb506a8a86d056f45762[m
+Author: sidik <sidik221b@gmail.com>
+Date:   Sun Jun 7 15:33:39 2020 +0700
+
+    tambah sql
+
+[33mcommit 295c0df12c0b592daf0d0c2935e7be7643b55508[m
+Author: sidik <sidik221b@gmail.com>
+Date:   Sat Jun 6 13:56:04 2020 +0700
+
+    tambah about
+
+[33mcommit 4d490f70b85e47228f40e1a7e4fd2ec328deab02[m
+Author: sidik <sidik221b@gmail.com>
+Date:   Sat Jun 6 13:51:00 2020 +0700
+
+    tambah about
+
+[33mcommit 75110a067cb86a7afbe2cb7e51d5f2dd20e741b3[m
+Author: sidik <sidik221b@gmail.com>
+Date:   Sat May 30 05:09:22 2020 +0700
+
+    first commit

@@ -19,7 +19,7 @@ class AddressController extends Controller
     	$categories = Category::all();
     	$provinces  = Province::all();
     	$address = Address::where('user_id', Auth::user()->id)->first();
-    	return view('eccomerce.address', compact('address', 'categories', 'provinces')); 
+    	return view('eccomerce.user.address', compact('address', 'categories', 'provinces')); 
     }
 
     public function getCity()
@@ -57,7 +57,7 @@ class AddressController extends Controller
     	$categories = Category::all();
     	$provinces  = Province::all();
     	$address_id = $id;
-    	return view('eccomerce.edit_address', compact('address_id', 'categories', 'provinces')); 
+    	return view('eccomerce.user.edit_address', compact('address_id', 'categories', 'provinces')); 
     }
 
     public function update(Request $request, $id)

@@ -11,7 +11,7 @@
 						<table class="table table-borderless">
 							<tr>
 								<th>Buku</th>
-								<th width="15%">Harga</th>
+								<th width="20%">Harga</th>
 							</tr>
 							@foreach($carts as $cart)
 							<tr>
@@ -40,13 +40,12 @@
 						<div class="mr-2 ml-2">
 							<form action="{{ route('cart.order') }}" method="POST">
 								@csrf
-								{{-- <div class="form-group">
-									<label>Nomor Handphone</label>
-									<input type="number" name="hp" class="form-control">
-								</div> --}}
 								<div class="form-group">
 									<label>Catatan</label>
 									<textarea name="catatan" class="form-control" style="resize: none;"></textarea>
+									@error('catatan')
+									<small class="text-danger">{{ $message }}</small>
+									@enderror
 								</div>
 								<input type="hidden" value="{{ $total_harga }}" name="total_harga">
 								<button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">Pesan Sekarang</button>

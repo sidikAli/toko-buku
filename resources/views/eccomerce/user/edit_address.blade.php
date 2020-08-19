@@ -1,54 +1,16 @@
 @extends('layouts.eccomerce.app')
-@section('title', 'Bacalah - Alamat' )
+@section('title', 'Bacalah - Ubah Alamat' )
 @section('content')
 
-<!-- Title page -->
-	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('{{ asset('eccomerce/') }}/images/book.jpg');">
-		<h2 class="ltext-105 cl0 txt-center">
-			Pengaturan
-		</h2>
-	</section>	
-
-<!-- Shoping Cart -->
-	<div class="bg0 p-t-75 p-b-85">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-md-3">
-					<div class="card">
-					  <div class="card-header text-white bg-dark ">
-					    Alamat
-					  </div>
-					  <ul class="list-group list-group-flush">
-					    <li class="list-group-item"><a href="{{ route('user.index') }}">Profil</a></li>
-					    <li class="list-group-item"><a href="{{ route('user.address') }}">Alamat</a></li>
-					  </ul>
-					</div>
-				</div>
-
-
-				<div class="col-md-9">
+@include('eccomerce.user.header')
+				<div class="col-9">
 				    <div class="card-header text-white bg-dark text-center">
-				      Alamat
+				    Ubah Alamat
 				    </div>
-				    {{-- cek jika alamat ada, tampilkan --}}
-				    @if($address)
 					<div class="card p-5">
-						<p>
-							{{ $address->subdistrict->city->province->name }}, 
-							{{  $address->subdistrict->city->name }},
-							{{  $address->subdistrict->name }}
-						</p>
-						<p>{{ $address->detail }}</p>
-						<div class="ml-auto">
-							<a href="{{ route('user.address.edit', $address->id) }}" class="btn btn-primary">Ubah Alamat</a>
-						</div>
-					</div>
-					{{-- jika gk ada, tampilkan form --}}
-				    @else
-					<div class="card p-5">
-					  <form action="{{ route('user.address.store') }}" method="POST">
+					  <form action="{{ route('user.address.update', $address_id) }}" method="POST">
 					  	@csrf
+					  	@method('PATCH')
 					  	<div class="form-group">
 						    <label for="province_id">Provinsi</label>
 						    <select class="form-control" id="province_id" name="province_id" required>
@@ -78,15 +40,12 @@
 							<textarea name="detail" id="detail" rows="4" class="form-control"></textarea>
 						</div>
 						<div class="text-center">
-							<button class="btn btn-dark" type="submit">Simpan</button>
+							<button class="btn btn-dark" type="submit">Ubah</button>
 						</div>
 					  </form>
 					</div>
-					@endif
 				</div>
-			</div>
-		</div>
-	</div>
+@include('eccomerce.user.footer')
 @endsection
 
 @section('js')

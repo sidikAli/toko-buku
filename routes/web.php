@@ -21,8 +21,6 @@ Route::get('/produk/cari', 'eccomerce\EccomerceController@search')->name('eccome
 Route::get('/kategori/{category}', 'eccomerce\EccomerceController@category')->name('eccomerce.category');
 Route::get('/tentang', 'eccomerce\EccomerceController@about')->name('eccomerce.about');
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'checkRole:admin'] ], function() {
 	Route::resource('/category', 'CategoryController')->except(['create', 'show']);
 	Route::resource('/book', 'BookController');
@@ -43,9 +41,11 @@ Route::group(['middleware' => ['auth', 'checkRole:user'] ], function() {
 	Route::post('/pesan', 'eccomerce\CartController@order')->name('cart.order');
 
 	Route::resource('/user', 'eccomerce\UserController')->except(['create', 'show', 'store', 'destroy']);
-	
+
 	Route::get('/alamat', 'eccomerce\AddressController@index')->name('user.address');
 	Route::post('/alamat', 'eccomerce\AddressController@store')->name('user.address.store');
 	Route::get('/alamat/{id}/edit', 'eccomerce\AddressController@edit')->name('user.address.edit');
 	Route::patch('/alamat/{id}', 'eccomerce\AddressController@update')->name('user.address.update');
+
+	Route::get('/user/pesanan', 'eccomerce\OrderController@index')->name('user.order');
 });

@@ -95,7 +95,7 @@
 					        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 				        	  
 				        	  @auth
-					          <a class="dropdown-item" href="{{ route('user.index') }}">Profil</a>
+					          <a class="dropdown-item" href="{{ route('user.index') }}">Akun</a>
 					          <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 						        Logout
 						      </a>
@@ -137,11 +137,15 @@
 			          <i class="zmdi zmdi-account"></i>
 			        </a>
 			        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-			          @if(Route::has('login'))
-			          <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
-			          @endif
+			          @auth
+			          <a class="dropdown-item" href="{{ route('user.index') }}">Akun</a>
+			          <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+			          @endauth
+
+			          @guest
 			          <a class="dropdown-item" href="{{ route('login') }}">Login</a>
 			          <a class="dropdown-item" href="{{ route('register') }}">Register</a>
+			          @endguest
 			        </div>
 			    </li>
 			</div>
@@ -185,11 +189,11 @@
 				</li>
 
 				<li>
-					<a href="product.html">Semua Buku</a>
+					<a href="{{ route('eccomerce.product') }}">Semua Buku</a>
 				</li>
 
 				<li>
-					<a href="blog.html">Tentang</a>
+					<a href="{{ route('eccomerce.about') }}">Tentang</a>
 				</li>
 
 			</ul>
