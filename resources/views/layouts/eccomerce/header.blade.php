@@ -95,7 +95,7 @@
 					        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 				        	  
 				        	  @auth
-					          <a class="dropdown-item" href="{{ route('user.index') }}">Akun</a>
+					          <a class="dropdown-item" href="{{ route('user.profil') }}">Akun</a>
 					          <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 						        Logout
 						      </a>

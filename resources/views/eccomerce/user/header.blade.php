@@ -15,9 +15,9 @@
 					    Pengaturan
 					  </div>
 					  <ul class="list-group list-group-flush">
-					    <li class="list-group-item"><a href="{{ route('user.index') }}" class="text-primary">Profil</a></li>
-					    <li class="list-group-item"><a href="{{ route('user.address') }}" class="text-dark">Alamat</a></li>
-					    <li class="list-group-item"><a href="{{ route('user.order') }}" class="text-dark" >Order</a></li>
+					    <li class="list-group-item"><a href="{{ route('user.profil') }}" class="{{ Request::is('user/profil*') ? "text-primary" : "text-dark" }}">Profil</a></li>
+					    <li class="list-group-item"><a href="{{ route('user.address') }}" class="{{ Request::is('user/alamat*') ? "text-primary" : "text-dark" }}">Alamat</a></li>
+					    <li class="list-group-item"><a href="{{ route('user.order') }}" class="{{ Request::is('user/pesanan*') ? "text-primary" : "text-dark" }}" >Order</a></li>
 					  </ul>
 					</div>
 				</div>

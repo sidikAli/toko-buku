@@ -16,7 +16,7 @@
 						  </button>
 						</div>
 						@endif
-					  <form action="{{ route('user.update', Auth::user()->id) }}" method="POST">
+					  <form action="{{ route('user.ubah', Auth::user()->id) }}" method="POST">
 					  	@csrf
 					  	@method('PATCH')
 						<div class="form-group">

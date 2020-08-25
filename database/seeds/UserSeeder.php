@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\User;
 
 class UserSeeder extends Seeder
 {
@@ -12,11 +12,11 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-    	DB::table('users')->insert([
-    		'name'		=> 'admin',
-    		'email' 	=> 'admin@bacalah.com',
-    		'password'	=> bcrypt('rahasia'),
-    		'role'		=> 'admin',
-    	]);
+        User::create([
+            'name' => "admin",
+            'email' => "admin@bacalah.com",
+            'password' => bcrypt("rahasia"),
+            'role' => "admin",
+        ]);
     }
 }

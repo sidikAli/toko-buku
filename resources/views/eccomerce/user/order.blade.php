@@ -34,7 +34,7 @@
 									<td>{{ $order->invoice }}</td>
 									<td>{{ $order->total }}</td>
 									<td>{{ $order->status }}</td>
-									<td><a href="" class="btn btn-success btn-sm">Detail</a ></td>
+									<td><a href="{{ route('user.order.show', $order->id) }}" class="btn btn-success btn-sm">Detail</a ></td>
 								</tr>
 								@endforeach
 							</tbody>

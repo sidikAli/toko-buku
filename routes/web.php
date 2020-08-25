@@ -22,6 +22,7 @@ Route::get('/kategori/{category}', 'eccomerce\EccomerceController@category')->na
 Route::get('/tentang', 'eccomerce\EccomerceController@about')->name('eccomerce.about');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'checkRole:admin'] ], function() {
+	Route::resource('/user', 'UserController');
 	Route::resource('/category', 'CategoryController')->except(['create', 'show']);
 	Route::resource('/book', 'BookController');
 	Route::get('/dashboard', 'HomeController@index')->name('dashboard.index');
@@ -40,12 +41,14 @@ Route::group(['middleware' => ['auth', 'checkRole:user'] ], function() {
 	Route::get('/checkout', 'eccomerce\CartController@checkout')->name('cart.checkout');
 	Route::post('/pesan', 'eccomerce\CartController@order')->name('cart.order');
 
-	Route::resource('/user', 'eccomerce\UserController')->except(['create', 'show', 'store', 'destroy']);
+	Route::get('/user/profil', 'eccomerce\UserController@index')->name('user.profil');
+	Route::patch('/user/{id}', 'eccomerce\UserController@update')->name('user.ubah');
 
-	Route::get('/alamat', 'eccomerce\AddressController@index')->name('user.address');
-	Route::post('/alamat', 'eccomerce\AddressController@store')->name('user.address.store');
-	Route::get('/alamat/{id}/edit', 'eccomerce\AddressController@edit')->name('user.address.edit');
-	Route::patch('/alamat/{id}', 'eccomerce\AddressController@update')->name('user.address.update');
+	Route::get('/user/alamat', 'eccomerce\AddressController@index')->name('user.address');
+	Route::post('/user/alamat', 'eccomerce\AddressController@store')->name('user.address.store');
+	Route::get('/user/alamat/{id}/edit', 'eccomerce\AddressController@edit')->name('user.address.edit');
+	Route::patch('/user/alamat/{id}', 'eccomerce\AddressController@update')->name('user.address.update');
 
 	Route::get('/user/pesanan', 'eccomerce\OrderController@index')->name('user.order');
+	Route::get('/user/pesanan/{id}', 'eccomerce\OrderController@show')->name('user.order.show');
 });

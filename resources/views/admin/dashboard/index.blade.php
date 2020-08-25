@@ -49,34 +49,54 @@
       <a href="{{ route('dashboard.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
     </div>
   </div>
+  <div class="col-lg-3 col-6">
+    <!-- small box -->
+    <div class="small-box bg-danger">
+      <div class="inner">
+        <h3>{{ $order }}</h3>
+
+        <p>Pesanan</p>
+      </div>
+      <div class="icon">
+        <i class="ion-android-cart"></i>
+      </div>
+      <a href="{{ route('dashboard.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+    </div>
+  </div>
 </div>
 
 <div class="card">
       <!-- /.card-header -->
+      <div class="card-header">
+        <h3>Data Pesanan</h3>
+      </div>
       <div class="card-body">
         <table class="table table-bordered">
-          {{-- <thead>                  
+          <thead>                  
             <tr>
               <th>#</th>
-              <th>Nama</th>  
-              <th>Kategori</th>  
-              <th>Stok</th>
-              <th>harga</th>
+              <th>User</th>
+              <th>Invoice</th>  
+              <th>Total</th>  
+              <th>Status</th>
               <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
             @php ($no = 1)
-            @foreach($books as $book)
+            @foreach($orders as $order)
             <tr>
               <td> {{ $no++ }} </td>
-              <td> {{ $book->judul }} </td>
-              <td> {{ $book->category->name }} </td>
-              <td> {{ $book->qty }} </td>
-              <td> Rp. {{ $book->harga }} </td>
+              <td> {{ $order->user->name }} </td>
+              <td> {{ $order->invoice }} </td>
+              <td> {{ $order->total }} </td>
+              <td> {{ $order->status }} </td>
+              <td>
+                <a href="#" class="btn btn-success btn-sm">Detail</a>
+              </td>
             </tr>
             @endforeach
-          </tbody> --}}
+          </tbody>
         </table>
       </div>
       <!-- /.card-body -->

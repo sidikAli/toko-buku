@@ -15,4 +15,12 @@ class OrderController extends Controller
     	$orders = Order::where('user_id', Auth::user()->id)->get();
     	return view('eccomerce.user.order', compact('categories', 'orders'));
     }
+
+    public function show($id)
+    {
+    	$categories = Category::all();
+    	$order = Order::where('id', $id)->first();
+    	// dd($order->details);
+    	return view('eccomerce.user.order_detail', compact('categories', 'order'));
+    }
 }
